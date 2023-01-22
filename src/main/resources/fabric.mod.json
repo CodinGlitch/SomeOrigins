@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "id": "someorigins",
+  "version": "${version}",
+  "name": "Some Origins",
+  "description": "",
+  "authors": [],
+  "contact": {},
+  "license": "MIT",
+  "icon": "assets/someorigins/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "client": [
+      "com.codinglitch.someorigins.client.SomeOriginsClient"
+    ],
+    "main": [
+      "com.codinglitch.someorigins.SomeOrigins"
+    ]
+  },
+  "mixins": [
+    "someorigins.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=0.14.13",
+    "fabric": "*",
+    "minecraft": "1.19.2"
+  }
+}

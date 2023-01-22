@@ -1,0 +1,10 @@
+{
+  "powers": [],
+  "icon": {
+    "item": "minecraft:iron_ingot"
+  },
+  "order": 3,
+  "impact": 2,
+  "name": "Cyborg",
+  "description": "robot man"
+}

@@ -1,0 +1,13 @@
+{
+  "type": "origins:modify_damage_taken",
+  "name": "Intangible",
+  "description": "Due to your spectral form, you take less physical damage and more magic damage.",
+  "damage_condition": {
+    "type": "origins:name",
+    "name": "magic"
+  },
+  "modifier": {
+    "operation": "multiply_total_multiplicative",
+    "value": 1
+  }
+}

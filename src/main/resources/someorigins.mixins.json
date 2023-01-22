@@ -1,0 +1,15 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "com.codinglitch.someorigins.mixins",
+  "compatibilityLevel": "JAVA_17",
+  "mixins": [
+    "EntityOffsetMixin"
+  ],
+  "client": [
+    "ClientEntityMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}

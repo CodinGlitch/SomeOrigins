@@ -1,0 +1,16 @@
+{
+  "powers": [
+    "someorigins:archangel/amorphous",
+    "someorigins:archangel/intangible",
+    "someorigins:archangel/intangible_other",
+    "someorigins:archangel/guidance",
+    "someorigins:archangel/test"
+  ],
+  "icon": {
+    "item": "minecraft:nether_star"
+  },
+  "order": 3,
+  "impact": 2,
+  "name": "Archangel",
+  "description": "A being of divine power."
+}
