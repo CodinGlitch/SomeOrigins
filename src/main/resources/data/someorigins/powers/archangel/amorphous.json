@@ -1,22 +1,9 @@
 {
-  "type": "origins:active_self",
+  "type": "someorigins:amorphous",
   "name": "Amorphous",
   "description": "As a being of pure energy, you do not have a solid form, and can freely change shape.",
-  "entity_action": {
-    "type": "origins:if_else",
-    "condition": {
-      "type": "origins:on_fire"
-    },
-    "if_action": {
-      "type": "origins:extinguish"
-    },
-    "else_action": {
-      "type": "origins:set_on_fire",
-      "duration": 8
-    }
-  },
-  "cooldown": 1,
-  "hud_render": {
-    "should_render": false
+  "key": {
+    "key": "key.origins.primary_active",
+    "continuous": true
   }
 }

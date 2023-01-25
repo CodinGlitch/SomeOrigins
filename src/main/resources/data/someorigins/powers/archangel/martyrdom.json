@@ -1,0 +1,9 @@
+{
+  "type": "someorigins:martyrdom",
+  "name": "Martyrdom",
+  "description": "You are able to sacrifice part of your life energy to replenish the creature you are currently guiding.",
+  "key": {
+    "key": "key.origins.ternary_active"
+  },
+  "resource": "someorigins:archangel/energy_bar"
+}

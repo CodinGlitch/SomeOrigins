@@ -1,0 +1,6 @@
+{
+  "death.attack.darkness": "%1$s stood in the dark for too long",
+  "death.attack.darkness.player": "%1$s stood in the dark for too long whilst trying to escape %2$s",
+
+  "death.attack.protecting_other": "%1$s died trying to protect %2$s"
+}

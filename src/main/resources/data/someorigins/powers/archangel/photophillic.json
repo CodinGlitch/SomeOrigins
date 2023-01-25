@@ -1,0 +1,6 @@
+{
+  "type": "someorigins:photophillic",
+  "name": "Photophillic",
+  "description": "When not directly under the sky, you are unable to naturally heal, however, when in full light and exposed to the sky, excess energy you gain is transformed into life force.",
+  "resource": "someorigins:archangel/energy_bar"
+}

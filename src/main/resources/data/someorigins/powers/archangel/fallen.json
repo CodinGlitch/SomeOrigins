@@ -1,0 +1,47 @@
+{
+  "type": "origins:multiple",
+  "name": "Fallen",
+  "description": "You have been exiled, and are now only a fraction of what you once were. You have half the vitality of a human being, are less satiated by food, and your movements are sluggish while grounded, but faster in air.",
+
+  "air_speed": {
+    "type": "origins:modify_air_speed",
+    "modifier": {
+      "operation": "multiply_total",
+      "value": 2
+    }
+  },
+
+  "slowness": {
+    "type": "origins:attribute",
+    "modifier": {
+      "name": "Generic speed decrease",
+      "attribute": "minecraft:generic.movement_speed",
+      "value": -0.5,
+      "operation": "multiply_total"
+    }
+  },
+
+  "health": {
+    "type": "origins:attribute",
+    "modifier": {
+      "name": "Max health decrease",
+      "attribute": "minecraft:generic.max_health",
+      "value": -0.5,
+      "operation": "multiply_total"
+    }
+  },
+
+  "unsatiated": {
+    "type": "origins:modify_food",
+    "food_modifier": {
+      "name": "Decreased food points",
+      "operation": "multiply_total_multiplicative",
+      "value": -0.25
+    },
+    "saturation_modifier": {
+      "name": "Decreased saturation gain",
+      "operation": "multiply_total_multiplicative",
+      "value": -0.25
+    }
+  }
+}

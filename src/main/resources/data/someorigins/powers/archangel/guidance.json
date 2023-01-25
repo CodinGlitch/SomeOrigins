@@ -1,5 +1,7 @@
 {
   "type": "someorigins:guidance",
+  "name": "Guidance",
+  "description": "You are able to guide other creatures, increasing their natural vitality and life force, while lifting some of their pain onto yourself.",
   "key": {
     "key": "key.origins.secondary_active"
   }

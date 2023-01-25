@@ -32,7 +32,7 @@ public class RidingPacketC2S {
                 if (toRide) {
                     player.startRiding(entity);
                     if (entity instanceof ServerPlayerEntity playerBeingRidden)
-                        RidingPacketS2C.send(playerBeingRidden, player);
+                        RidingPacketS2C.send(playerBeingRidden, player, true);
                 } else {
                     player.stopRiding();
                 }

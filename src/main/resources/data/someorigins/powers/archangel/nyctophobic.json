@@ -1,0 +1,75 @@
+{
+  "type": "origins:multiple",
+  "name": "Nyctophobic",
+  "description": "When in darkness, you quickly lose the energy that makes up your body, draining your life force in the process.",
+
+  "shaking": {
+    "type": "origins:shaking",
+    "condition": {
+      "type": "origins:brightness",
+      "comparison": "<=",
+      "compare_to": 0.1
+    }
+  },
+
+  "damage": {
+    "type": "origins:damage_over_time",
+    "interval": 10,
+    "onset_delay": 1,
+    "damage": 2,
+    "damage_easy": 1,
+    "damage_source": {
+      "name": "darkness",
+      "unblockable": true,
+      "bypasses_armor": true
+    },
+
+    "condition": {
+      "type": "origins:and",
+      "conditions": [{
+        "type": "origins:resource",
+        "resource": "someorigins:archangel/energy_bar",
+        "comparison": "==",
+        "compare_to": 0
+      }, {
+        "type": "origins:brightness",
+        "comparison": "<=",
+        "compare_to": 0.1
+      }]
+    }
+  },
+
+  "drain_energy": {
+    "type": "origins:action_over_time",
+    "interval": 30,
+
+    "entity_action": {
+      "type": "origins:change_resource",
+      "resource": "someorigins:archangel/energy_bar",
+      "change": -1
+    },
+
+    "condition": {
+      "type": "origins:brightness",
+      "comparison": "<=",
+      "compare_to": 0.1
+    }
+  },
+
+  "regain_energy": {
+    "type": "origins:action_over_time",
+    "interval": 100,
+
+    "entity_action": {
+      "type": "origins:change_resource",
+      "resource": "someorigins:archangel/energy_bar",
+      "change": 1
+    },
+
+    "condition": {
+      "type": "origins:brightness",
+      "comparison": ">",
+      "compare_to": 0.1
+    }
+  }
+}
