@@ -32,7 +32,7 @@ public abstract class PlayerEntityMixin extends LivingEntity implements Nameable
     @Inject(method = "shouldDismount", at = @At("RETURN"), cancellable = true)
     private void someorigins$shouldDismount(CallbackInfoReturnable<Boolean> info) {
         if (GuidancePower.canGuide(this.getVehicle()))
-            if(PowerHolderComponent.hasPower(this, GuidancePower.class))
+            if (PowerHolderComponent.hasPower(this, GuidancePower.class))
                 info.setReturnValue(false);
     }
 }
