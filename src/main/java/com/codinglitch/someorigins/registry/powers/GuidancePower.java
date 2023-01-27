@@ -19,6 +19,7 @@ import net.minecraft.entity.passive.GolemEntity;
 import net.minecraft.entity.passive.MerchantEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.server.network.ServerPlayerEntity;
+import net.minecraft.util.math.MathHelper;
 
 public class GuidancePower extends Power implements Active {
     private Key key;
@@ -67,7 +68,7 @@ public class GuidancePower extends Power implements Active {
 
             Entity vehicle = entity.getVehicle();
             if (vehicle instanceof LivingEntity livingVehicle && entity.world.getTime() % 20 == 0) { // first statement should be true anyway but probably better than type casting
-                livingVehicle.addStatusEffect(new StatusEffectInstance(StatusEffects.REGENERATION, 100, 1));
+                livingVehicle.addStatusEffect(new StatusEffectInstance(StatusEffects.REGENERATION, 100, MathHelper.clamp(MathHelper.floor((livingVehicle.getMaxHealth() / 20f) - 1), 0, 3), false, false)) ;
             }
         }
         super.tick();

@@ -25,7 +25,6 @@ public abstract class LivingEntityMixin extends Entity {
     private float someorigins$damage(float amount) {
         Entity passenger;
         if ((passenger = this.getFirstPassenger()) != null ) {
-            System.out.println(passenger.getName());
             if (passenger instanceof LivingEntity livingPassenger) {
                 if (PowerHolderComponent.hasPower(livingPassenger, GuidancePower.class)) {
                     amount *= 0.75f;

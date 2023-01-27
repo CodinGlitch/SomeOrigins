@@ -1,10 +1,7 @@
 package com.codinglitch.someorigins;
 
 import com.codinglitch.someorigins.registry.SomeOriginsScaleTypes;
-import com.codinglitch.someorigins.registry.powers.AmorphousPower;
-import com.codinglitch.someorigins.registry.powers.GuidancePower;
-import com.codinglitch.someorigins.registry.powers.MartyrdomPower;
-import com.codinglitch.someorigins.registry.powers.PhotophillicPower;
+import com.codinglitch.someorigins.registry.powers.*;
 import io.github.apace100.apoli.data.ApoliDataTypes;
 import io.github.apace100.apoli.power.Active;
 import io.github.apace100.apoli.power.Power;
@@ -25,6 +22,7 @@ public class SomeOriginsPowers {
         Registry.register(ApoliRegistries.POWER_FACTORY, GUIDANCE.getSerializerId(), GUIDANCE);
         Registry.register(ApoliRegistries.POWER_FACTORY, AMORPHOUS.getSerializerId(), AMORPHOUS);
         Registry.register(ApoliRegistries.POWER_FACTORY, MARTYRDOM.getSerializerId(), MARTYRDOM);
+        Registry.register(ApoliRegistries.POWER_FACTORY, ENERGY_IN_LIGHT.getSerializerId(), ENERGY_IN_LIGHT);
     }
 
 
@@ -35,14 +33,12 @@ public class SomeOriginsPowers {
         return registerPower(identifier, new SerializableData(), instantiator);
     }
     public static PowerFactory<Power> registerPower(String identifier, SerializableData serializableData, TriFunction<SerializableData.Instance, PowerType<Power>, LivingEntity, Power> instantiator) {
-        PowerFactory<Power> factory = new PowerFactory<>(new Identifier(SomeOrigins.ID, identifier), serializableData, data -> (type, entity) -> {
+        return new PowerFactory<>(new Identifier(SomeOrigins.ID, identifier), serializableData, data -> (type, entity) -> {
             Power power = instantiator.apply(data, type, entity);
             if (power instanceof Active activePower)
                 activePower.setKey(data.get("key"));
             return power;
         }).allowCondition();
-
-        return factory;
     }
 
     public static final PowerFactory<Power> PHOTOPHILLIC = registerPower("photophillic",
@@ -54,5 +50,10 @@ public class SomeOriginsPowers {
     public static final PowerFactory<Power> MARTYRDOM = registerPower("martyrdom",
             new SerializableData().add("key", ApoliDataTypes.KEY, new Active.Key()).add("resource", ApoliDataTypes.POWER_TYPE),
             (data, type, entity) -> new MartyrdomPower(type, entity, data.get("resource"))
+    );
+
+    public static final PowerFactory<Power> ENERGY_IN_LIGHT = registerPower("energy_in_light",
+            new SerializableData().add("resource", ApoliDataTypes.POWER_TYPE),
+            (data, type, entity) -> new EnergyInLightPower(type, entity, data.get("resource"))
     );
 }

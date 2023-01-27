@@ -19,12 +19,5 @@ public abstract class EntityOffsetMixin {
 
     @Inject(at = @At("RETURN"), method = "getMountedHeightOffset", cancellable = true)
     private void someorigins$getMountedHeightOffset(CallbackInfoReturnable<Double> info) {
-
-        Entity firstPassenger = this.getFirstPassenger();
-        if (firstPassenger != null) {
-            if (PowerHolderComponent.hasPower(firstPassenger, GuidancePower.class))
-                info.setReturnValue(this.getHeight() * 0.3d + firstPassenger.getHeight() * 0.7d);
-        }
-
     }
 }

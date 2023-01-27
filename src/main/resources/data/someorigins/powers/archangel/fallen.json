@@ -7,7 +7,7 @@
     "type": "origins:modify_air_speed",
     "modifier": {
       "operation": "multiply_total",
-      "value": 2
+      "value": 1.8
     }
   },
 
@@ -16,7 +16,7 @@
     "modifier": {
       "name": "Generic speed decrease",
       "attribute": "minecraft:generic.movement_speed",
-      "value": -0.5,
+      "value": -0.6,
       "operation": "multiply_total"
     }
   },
@@ -35,12 +35,12 @@
     "type": "origins:modify_food",
     "food_modifier": {
       "name": "Decreased food points",
-      "operation": "multiply_total_multiplicative",
+      "operation": "multiply_total",
       "value": -0.25
     },
     "saturation_modifier": {
       "name": "Decreased saturation gain",
-      "operation": "multiply_total_multiplicative",
+      "operation": "multiply_total",
       "value": -0.25
     }
   }

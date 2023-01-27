@@ -23,10 +23,10 @@ public class ClientEntityMixin {
         ClientPlayerEntity player = client.player;
 
         if (player != null) {
-            if (player.hasVehicle()) {
+            if (player.getVehicle() != null) {
                 if (self.getUuid() == player.getVehicle().getUuid())
                     info.setReturnValue(false);
-            } else if (player.hasPrimaryPassenger()) {
+            } else if (player.getFirstPassenger() != null) {
                 if (self.getUuid() == player.getFirstPassenger().getUuid())
                     info.setReturnValue(false);
             }

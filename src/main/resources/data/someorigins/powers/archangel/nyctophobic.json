@@ -14,7 +14,7 @@
 
   "damage": {
     "type": "origins:damage_over_time",
-    "interval": 10,
+    "interval": 15,
     "onset_delay": 1,
     "damage": 2,
     "damage_easy": 1,
@@ -39,37 +39,8 @@
     }
   },
 
-  "drain_energy": {
-    "type": "origins:action_over_time",
-    "interval": 30,
-
-    "entity_action": {
-      "type": "origins:change_resource",
-      "resource": "someorigins:archangel/energy_bar",
-      "change": -1
-    },
-
-    "condition": {
-      "type": "origins:brightness",
-      "comparison": "<=",
-      "compare_to": 0.1
-    }
-  },
-
-  "regain_energy": {
-    "type": "origins:action_over_time",
-    "interval": 100,
-
-    "entity_action": {
-      "type": "origins:change_resource",
-      "resource": "someorigins:archangel/energy_bar",
-      "change": 1
-    },
-
-    "condition": {
-      "type": "origins:brightness",
-      "comparison": ">",
-      "compare_to": 0.1
-    }
+  "handle_energy": {
+    "type": "someorigins:energy_in_light",
+    "resource": "someorigins:archangel/energy_bar"
   }
 }

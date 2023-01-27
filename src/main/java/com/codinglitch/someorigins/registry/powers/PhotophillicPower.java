@@ -41,7 +41,7 @@ public class PhotophillicPower extends Power {
                     entity.addStatusEffect(new StatusEffectInstance(StatusEffects.ABSORPTION, 2000, 0));
                 } else {
                     int amplifier = MathHelper.floor(entity.getAbsorptionAmount() / 4f);
-                    entity.addStatusEffect(new StatusEffectInstance(StatusEffects.ABSORPTION, 2000, Math.min(amplifier, 4)));
+                    entity.addStatusEffect(new StatusEffectInstance(StatusEffects.ABSORPTION, 2000 + (amplifier * 1200), Math.min(amplifier, 4)));
                 }
             }
         }

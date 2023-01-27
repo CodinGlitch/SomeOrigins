@@ -33,6 +33,7 @@ public class MartyrdomPower extends Power implements Active {
             } else {
                 float amount = entity.getMaxHealth() * (0.2f - power.getValue() * 0.1f);
                 power.setValue(0);
+                PowerHolderComponent.syncPower(entity, powerType);
 
                 vehicle.heal(amount);
                 entity.damage(new EntityDamageSource("protecting_other", vehicle), amount);
